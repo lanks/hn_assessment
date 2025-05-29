@@ -1,0 +1,8 @@
+<h1>Annual income tax calculator</h1>
+<h2>Enter the annual income to calculate the individual's tax!</h2>
+<%= form_for(@individual_income_tax) do |f| %>
+  <%= f.label :annual_income %>
+  <%= f.number_field :annual_income, min: 0.01, step: 0.01 %>
+  <%= f.submit "Calculate" %>
+<% end %>
+<strong>Estimated annual income tax: <%= number_to_currency(@individual_income_tax.annual_income_tax, precision: 2) if @individual_income_tax.annual_income_tax.present? %></strong>
