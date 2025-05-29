@@ -8,10 +8,10 @@ class IndividualIncomeTax
   
 
   def annual_income=(value)
-    @annual_income = value.to_f if value.present?
+    @annual_income = value&.to_f
   end
 
   def annual_income_tax=(value)
-    @annual_income_tax = value.to_f if value.present?
+    @annual_income_tax = value&.to_f
   end
 end
