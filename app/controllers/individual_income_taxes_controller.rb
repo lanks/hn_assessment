@@ -1,6 +1,6 @@
 class IndividualIncomeTaxesController < ApplicationController
   def new
-    @individual_income_tax = IndividualIncomeTax.new
+    @individual_income_tax = IndividualIncomeTax.new(country: :nz)
   end
 
   def create
@@ -14,6 +14,6 @@ class IndividualIncomeTaxesController < ApplicationController
 
   private
   def individual_income_tax_params
-    params.require(:individual_income_tax).permit(:annual_income)
+    params.require(:individual_income_tax).permit(:annual_income, :country)
   end
 end
